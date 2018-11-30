@@ -17,10 +17,11 @@ int main() {
 	// Test the initialize game function:
 	state.handCount[0] = 1;
 	state.hand[0][0] = smithy;
-	state.deckCount[0] = 3;
+	state.deckCount[0] = 4;
 	state.deck[0][0] = copper;
 	state.deck[0][1] = copper;
 	state.deck[0][2] = copper;
+	state.deck[0][3] = copper;
 	state.discardCount[0] = 0;
 	int playerHandSize = state.handCount[0];
 
