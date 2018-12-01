@@ -654,7 +654,7 @@ int getCost(int cardNumber)
  // DEBUG - changed int* z to int z (nothing happens?)
  //       - changed int* cardDrawn to int cardDrawn
 int adventurerEffect(int* drawntreasure, struct gameState* state, int const currentPlayer, int cardDrawn,
-	int* temphand, int z)
+	int* temphand, int z, int const handPos)
 {
 	while (*drawntreasure < 2) {
 		if (state->deckCount[currentPlayer] < 1) {//if the deck is empty we need to shuffle discard and add to deck
@@ -674,6 +674,9 @@ int adventurerEffect(int* drawntreasure, struct gameState* state, int const curr
 		state->discard[currentPlayer][state->discardCount[currentPlayer]++] = temphand[z - 1]; // discard all cards in play that have been drawn
 		z = z - 1;
 	}
+
+	//put played card in played card pile
+	discardCard(handPos, currentPlayer, state, 0);
 	return 0;
 }
 
@@ -770,12 +773,12 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		// REFACTORED - 1
 		// int adventurerEffect(int* drawntreasure, struct gameState* state, int const currentPlayer, int* cardDrawn,
 		//                      int* temphand, int* z)
-		return adventurerEffect(&drawntreasure, state, currentPlayer, cardDrawn, temphand, z);
+		return adventurerEffect(&drawntreasure, state, currentPlayer, cardDrawn, temphand, z, handPos);
 
 	case council_room:
 		// REFACTORED - 2
 		// int councilRoomEffect(int const currentPlayer, struct gameState* state, int const handPos) {
-		councilRoomEffect(currentPlayer, state, handPos);
+		return councilRoomEffect(currentPlayer, state, handPos);
 
 	case feast:
 		//gain card with cost up to 5
