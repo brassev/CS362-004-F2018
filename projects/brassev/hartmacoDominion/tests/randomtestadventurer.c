@@ -2,7 +2,9 @@
 
 const int testCard = adventurer;
 
-void cardEffect_adventurer(struct gameState *state, int currentPlayer);
+//void cardEffect_adventurer(struct gameState *state, int currentPlayer);
+int adventurerEffect(int* drawntreasure, struct gameState* state, int const currentPlayer, int cardDrawn,
+	int* temphand, int z, int const handPos);
 /*
 void cardEffect_adventurer(struct gameState *state, int currentPlayer) {
 	int drawntreasure = 0;
@@ -46,5 +48,8 @@ void oracle(struct gameState * state, int currentPlayer) {
 
 void run_test(struct gameState * oracleState, struct gameState * state) {
 	oracle(oracleState, oracleState->whoseTurn);
-	cardEffect_adventurer(state, state->whoseTurn);
+	int drawntreasure = 0;
+	int temphand[MAX_HAND] = { 0 };
+	adventurerEffect(&drawntreasure, state, state->whoseTurn, adventurer,
+	temphand, 0, 0);
 }
