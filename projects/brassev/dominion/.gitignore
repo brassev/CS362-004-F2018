@@ -1,0 +1,8 @@
+*.o
+*.gcno
+*.gcda
+playdom
+player
+*.suo
+*.json
+*.sqlite
