@@ -2,7 +2,8 @@
 
 const int testCard = smithy;
 
-void cardEffect_smithy(struct gameState* state, int currentPlayer, int handPos);
+//void cardEffect_smithy(struct gameState* state, int currentPlayer, int handPos);
+int smithyEffect(int const currentPlayer, struct gameState* state, int const handPos);
 /*
 void cardEffect_smithy(struct gameState* state, int currentPlayer, int handPos) {
 	//+3 Cards
@@ -31,5 +32,6 @@ void oracle(struct gameState * state, int currentPlayer, int handPos) {
 
 void run_test(struct gameState * oracleState, struct gameState * state) {
 	oracle(oracleState, oracleState->whoseTurn, handPos);
-	cardEffect_smithy(state, state->whoseTurn, handPos);
+//	cardEffect_smithy(state, state->whoseTurn, handPos);
+	smithyEffect(state->whoseTurn, state, handPos);
 }
