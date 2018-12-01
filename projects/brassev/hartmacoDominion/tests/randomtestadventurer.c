@@ -51,5 +51,5 @@ void run_test(struct gameState * oracleState, struct gameState * state) {
 	int drawntreasure = 0;
 	int temphand[MAX_HAND] = { 0 };
 	adventurerEffect(&drawntreasure, state, state->whoseTurn, adventurer,
-	temphand, 0, handpos);
+	temphand, 0, handPos);
 }

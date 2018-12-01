@@ -676,7 +676,7 @@ int adventurerEffect(int* drawntreasure, struct gameState* state, int const curr
 	}
 
 	//put played card in played card pile
-	discardCard(handPos, currentPlayer, state, 0);
+//	discardCard(handPos, currentPlayer, state, 0);
 	return 0;
 }
 
