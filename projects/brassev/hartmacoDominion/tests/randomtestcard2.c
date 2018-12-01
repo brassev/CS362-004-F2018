@@ -2,7 +2,8 @@
 
 const int testCard = council_room;
 
-void cardEffect_council_room(struct gameState *state, int currentPlayer, int handPos);
+//void cardEffect_council_room(struct gameState *state, int currentPlayer, int handPos);
+int councilRoomEffect(int const currentPlayer, struct gameState* state, int const handPos);
 /*
 void cardEffect_council_room(struct gameState *state, int currentPlayer, int handPos) {
 	//+4 Cards
@@ -50,5 +51,6 @@ void oracle(struct gameState * state, int currentPlayer, int handPos) {
 
 void run_test(struct gameState * oracleState, struct gameState * state) {
 	oracle(oracleState, oracleState->whoseTurn, handPos);
-	cardEffect_council_room(state, state->whoseTurn, handPos);
+	//cardEffect_council_room(state, state->whoseTurn, handPos);
+	councilRoomEffect(state->whoseTurn, state, handPos);
 }
